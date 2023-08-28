@@ -1,15 +1,22 @@
 {
 	"name": "@swordtooth/json-viewer",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "适用于 React 的 json 查看组件。",
 	"main": "index.js",
 	"scripts": {
 		"dev": "cross-env NODE_ENV=development webpack-dev-server -c webpack.config.js",
 		"build": "cross-env NODE_ENV=production webpack -c webpack.config.js"
 	},
-	"keywords": ["react", "json-viewer"],
+	"keywords": ["react", "json-viewer", "component"],
 	"author": "",
 	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/ImSwordTooth/jsonviewer/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ImSwordTooth/jsonviewer"
+	},
 	"exports": {
 		".": "./src/App.jsx"
 	},
