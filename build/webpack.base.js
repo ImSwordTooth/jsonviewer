@@ -1,7 +1,6 @@
 // 公共配置
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin') // 把最终构建好的静态资源都引入到一个html文件中
-const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin') // 仅在生产环境使用，目的是：在开发模式 css 会嵌入到 style 标签里面,方便样式热替换,打包时会把css抽离成单独的css文件
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const nextcss = require("postcss-cssnext");
@@ -149,9 +148,6 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, '../public/index.html'),
             inject: true // 自动注入静态资源
-        }),
-        new webpack.DefinePlugin({ // 自定义参数，要用 JSON.stringify 包一下，要不然就直接传入表达式了
-            env: JSON.stringify(process.env.NODE_ENV === 'development' ? 'development' : 'production') // 当前环境
         }),
         !isDev && new MiniCssExtractPlugin({
             filename: "static/css/[name].[contenthash:10].css",

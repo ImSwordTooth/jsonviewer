@@ -24,9 +24,7 @@ export const JSONViewerWp = (props) => {
 
 	return (
 		<GlobalContext.Provider value={{ isShowLineNumber, canCollapse, onCopy, footerArr, setFooterArr, isShowFooter, currentLine, setCurrentLine, height, isEmptyObjectOneLine }}>
-
 			<StyledWp style={{ width, maxHeight: height }}>
-
 				{
 					isShowCopy &&
 					<div className="copy" onClick={handleCopy}>
@@ -58,3 +56,12 @@ JSONViewerWp.propTypes = {
 	isShowFooter: PropTypes.bool,
 	isEmptyObjectOneLine: PropTypes.bool
 };
+
+JSONViewerWp.defaultProps = {
+	canCollapse: true,
+	isShowLineNumber: true,
+	isShowCopy: true,
+	onCopy: () => {},
+	isShowFooter: true,
+	isEmptyObjectOneLine: false
+}
